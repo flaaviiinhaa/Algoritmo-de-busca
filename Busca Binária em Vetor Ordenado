@@ -1,0 +1,33 @@
+programa
+{
+	funcao inicio()
+	{
+		inteiro vetor[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}
+		inteiro elementoBuscado
+		inteiro inicio = 0, fim = 15, meio
+		inteiro indice = -1
+
+		escreva("Escolha um número entre 0 a 15\n")
+		escreva("Digite o número a ser buscado: ")
+		leia(elementoBuscado)
+
+		enquanto (inicio <= fim) {
+			meio = (inicio + fim) / 2
+
+			se (vetor[meio] == elementoBuscado) {
+				indice = meio
+				pare
+			} senao se (vetor[meio] < elementoBuscado) {
+				inicio = meio + 1
+			} senao {
+				fim = meio - 1
+			}
+		}
+
+		se (indice != -1) {
+			escreva("Elemento encontrado na posição: ", indice, "\n")
+		} senao {
+			escreva("Elemento não encontrado.\n")
+		}
+	}
+}
